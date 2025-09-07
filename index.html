@@ -3,45 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fuel Her Ambition | Become The Solution</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Proxima Nova font (use system fallback if not available) -->
+    <!-- 
+      If you have access to a web font service (like Adobe Fonts), 
+      add their embed code here. For example:
+      <link rel="stylesheet" href="https://use.typekit.net/xxxxxx.css">
+    -->
+    <!-- Add Avenir font from CDN -->
+    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
+    <!-- Use AvenirNextLTPro-Heavy for the header font -->
+    <link href="https://db.onlinewebfonts.com/c/09c6fa9769528ae2357e67e71c192ee0?family=AvenirNextLTPro-Heavy" rel="stylesheet">
+    <!-- Use AvenirNextCyr-Bold for body and button text -->
+    <link href="https://db.onlinewebfonts.com/c/28f70728be1cb6dc87a8903182044dfd?family=AvenirNextCyr-Bold" rel="stylesheet" type="text/css"/>
+    <style>
+        /* 
+          This uses Proxima Nova if installed on your computer.
+          If not, it will use Avenir from the CDN, then Arial, or any sans-serif font.
+        */
+        body {
+            font-family: "AvenirNextCyr-Bold", 'Proxima Nova', 'Avenir', Arial, sans-serif;
+        }
+        /* Make the header use AvenirNextLTPro-Heavy font */
+        h1 {
+            font-family: "AvenirNextLTPro-Heavy";
+        }
+        /* Custom colors for yellow and white */
+        .brand-yellow { color: #ffc907; }
+        .brand-bg-yellow { background-color: #ffc907; }
+        .brand-white { color: #fff7e1; }
+        /* Drop shadow for all text */
+        .text-shadow {
+            text-shadow: -3px 6px 4px rgba(0, 0, 0, 0.5);
+        }
+        /* Separate drop shadow for the call-to-action button */
+        .btn-shadow {
+            box-shadow: 2px 4px 12px rgba(0,0,0,0.4);
+        }
+        /* Underline for button text */
+        .underline-btn {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        /* Use AvenirNextCyr-Bold for the call-to-action button */
+        a.brand-bg-yellow {
+            font-family: "AvenirNextCyr-Bold", 'Proxima Nova', 'Avenir', Arial, sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+<body class="bg-black">
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+    <!-- 
+      Main container for the landing page.
+      - It's set to cover the full screen height (min-h-screen).
+      - Flexbox is used to center the content vertically.
+      - A background image is applied using an inline style. You can replace the placeholder URL with your own.
+    -->
+    <main class="relative min-h-screen flex items-center bg-cover bg-left" style="background-image: url('img/4891_Ethiopia_2019_CG-.jpg'); background-position: left center;">
+        
+        <!-- 
+          Gradient Overlay.
+          This div sits on top of the background image to create the dark fade effect on the left side, 
+          ensuring the text is readable. It fades from solid black to transparent.
+        -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
+        <!-- 
+          Content Wrapper.
+          - 'relative z-10' ensures this content appears above the gradient overlay.
+          - Padding is added for spacing, which adjusts for different screen sizes (responsive).
+          - 'max-w-2xl' limits the width of the text content for better readability.
+          - 'ml-24' moves the content to the right, making room for the logo on the left.
+        -->
+        <div class="relative z-10 w-full max-w-2xl px-6 pt-16 ml-24">
+            <!-- Headline, styled bold and large, centered, drop shadow, custom white/yellow -->
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black brand-white text-shadow leading-tight text-center mb-6">
+                Fuel her ambition,<br>
+                become the <span style="color: #ffc907;" class="text-shadow">solution</span>
+            </h1>
+
+            <!-- Paragraph, centered, drop shadow, custom white, larger text -->
+            <p class="mt-2 text-2xl sm:text-4xl font-bold brand-white text-shadow leading-relaxed text-center mb-8">
+                Join the movement to end the water crisis. Donate today to see how your contribution helps bring clean water to children like her every step of the way.
             </p>
-        </div>
-    </section>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+            <!-- Center the button using flexbox -->
+            <div class="flex justify-center">
+                <!-- 
+                  The button:
+                  - No border
+                  - Taller with py-6
+                  - Uses flex to center text vertically and horizontally
+                  - Larger text size
+                -->
+                <a href="#" class="brand-bg-yellow text-black font-extrabold uppercase tracking-wide py-6 px-10 rounded-full text-4xl hover:bg-yellow-300 transition duration-300 btn-shadow underline-btn flex items-center justify-center">
+                    JOIN THE MOVEMENT
+                </a>
+            </div>
+        </div>
+        <!-- Logo is now outside the content wrapper so it stays at the left -->
+        <div class="absolute bottom-0 left-8">
+            <!-- Water can logo image -->
+            <img src="img/water-can-transparent.png" alt="Water Can Logo" class="h-24 w-24">
+        </div>                        
+    </main>
+
 </body>
 </html>
